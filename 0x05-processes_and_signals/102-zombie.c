@@ -10,29 +10,26 @@
  */
 int create_zombie_processes(void)
 {
-	while (1)
-	{
-		int i;
+	int i;
 
-		for (i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++)
+	{
+		if (fork() == 0)
 		{
-			if (fork() == 0)
-			{
-				printf("Zombie process created,
-						PID: %d\n", getpid());
-				return (0);
-			}
+			printf("Zombie process created, PID: %d\n", getpid());
+			return (0);
 		}
 	}
+
 	return (0);
 }
 
 /**
- * infinite_loop - function that contains an infinite loop.
+ * infinite_while - function that contains an infinite loop.
  *
  * Return: 0
  */
-int infinite_loop(void)
+int infinite_while(void)
 {
 	while (1)
 	{
@@ -49,6 +46,6 @@ int infinite_loop(void)
 int main(void)
 {
 	create_zombie_processes();
-	infinite_loop();
+	infinite_while();
 	return (0);
 }
