@@ -21,7 +21,7 @@ int create_zombie_processes(void)
 		}
 	}
 
-	return (0);
+	return (1);
 }
 
 /**
@@ -45,7 +45,8 @@ int infinite_while(void)
  */
 int main(void)
 {
-	create_zombie_processes();
+	if (create_zombie_processes() == 0)
+		return (0);
 	infinite_while();
 	return (0);
 }
