@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Using while loop to display specific information from /etc/passwd file
+
+
+while IFS=: read -r username _ userid _ _ homepath _
+do
+    echo "$username:$userid:$homepath"
+done < /etc/passwd
