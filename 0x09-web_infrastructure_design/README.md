@@ -1,0 +1,1 @@
+This directory was created to practice designing the web infrastructure.
